@@ -48,10 +48,9 @@ public class adv_prob_1 {
                         input = "Get outta here!";
                 }
             }
+            // Checks whether to continue or exit loop.
             while (input.equalsIgnoreCase("Y"));
     }
-
-
     // Function for creating deck of cards.
     public static ArrayList makeDeck() {
         // Creates new ArrayList to hold cards.
@@ -70,10 +69,11 @@ public class adv_prob_1 {
                 newDeck.add(newCard);
             }
         }
-        // Shuffles ArrayList 5 times.
+        // Shuffles ArrayList 5 times to be thorough.
         for (int x = 0; x < 5; x++) {
             Collections.shuffle(newDeck);
         }
+        // Returns ArrayList.
         return newDeck;
     }
 }
