@@ -31,11 +31,12 @@ public class adv_prob_2 {
 
         ArrayList<String[]> cardDeck = makeDeck();
 
-        ArrayList<String[]> player_hand = new ArrayList<String[]>();
+//        ArrayList<String[]> player_hand = new ArrayList<String[]>();
         for (int x = 1; x <= player_Count; x++) {
-            for (int i = 0; i < cards_per_Player; i++) {
-                String[] aCard = drawCard(cardDeck);
-                player_hand.add(aCard);
+            ArrayList<String[]> player_hand = dealCardsToHand(cards_per_Player, cardDeck);
+            //            for (int i = 0; i < cards_per_Player; i++) {
+//                String[] aCard = drawCard(cardDeck);
+//                player_hand.add(aCard);
 
 
 
@@ -56,7 +57,7 @@ public class adv_prob_2 {
 //            }
 //            else if (card >= 39) {
 //                players_cards[i] = String.format("%d of Hearts", (card - 39) + 1);
-            }
+
             all_players_cards.put(x, player_hand);
         }
     }
@@ -108,6 +109,15 @@ public class adv_prob_2 {
         cardDeck.remove(randomIndex);
         // Returns card array.
         return aCard;
+    }
+
+    public static ArrayList dealCardsToHand(int cards_per_Player, ArrayList cardDeck) {
+        ArrayList<String[]> player_hand = new ArrayList<String[]>();
+        for (int i = 0; i < cards_per_Player; i++) {
+            String[] aCard = drawCard(cardDeck);
+            player_hand.add(aCard);
+        }
+        return player_hand;
     }
 }
 
