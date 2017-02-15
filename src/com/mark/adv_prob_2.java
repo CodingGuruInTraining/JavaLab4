@@ -1,10 +1,14 @@
 package com.mark;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Random;
-import java.util.Scanner;
-import java.util.Collections;
+import java.util.*;
+
+
+// BRAINSTORMING!!!
+//  single card = String[] >>>
+//  players hand = ArrayList<String[]> >>>
+//  players = dictionary {#:ArrayList}
+//
+
 
 
 /**
@@ -19,16 +23,19 @@ public class adv_prob_2 {
     public static void main(String[] args) {
         // Creates variable holding number of cards each player will receive
         int cards_per_Player = 5;
+        int player_Count = 2;
         // Creates string array to hold the player's cards
-        String[] players_hand = new String[cards_per_Player];
+//        String[] players_hand = new String[cards_per_Player];
 
-        ArrayList<String[]> all_players_cards = new ArrayList<String[]>();
+        HashMap all_players_cards = new HashMap();
 
         ArrayList<String[]> cardDeck = makeDeck();
 
-
-        for (int i = 0; i < cards_per_Player; i++) {
-
+        ArrayList<String[]> player_hand = new ArrayList<String[]>();
+        for (int x = 1; x <= player_Count; x++) {
+            for (int i = 0; i < cards_per_Player; i++) {
+                String[] aCard = drawCard(cardDeck);
+                player_hand.add(aCard);
 
 
 
@@ -50,8 +57,9 @@ public class adv_prob_2 {
 //            else if (card >= 39) {
 //                players_cards[i] = String.format("%d of Hearts", (card - 39) + 1);
             }
+            all_players_cards.put(x, player_hand);
         }
-
+    }
 
 
 
