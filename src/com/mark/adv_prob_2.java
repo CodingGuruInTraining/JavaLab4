@@ -1,8 +1,6 @@
 package com.mark;
 
-import java.util.Arrays;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * Created by hl4350hb on 2/15/2017.
@@ -46,6 +44,33 @@ public class adv_prob_2 {
         int wanted_cards = numberScanner.nextInt();
         // Displays generic response.
         System.out.println("I don't have any of those. GO FISH!");
+    }
+
+    // Function for creating deck of cards. Copied over from
+    // adv_prob_1.
+    public static ArrayList makeDeck() {
+        // Creates new ArrayList to hold cards.
+        ArrayList newDeck = new ArrayList();
+        // Creates static arrays of each suite name and each card type.
+        String[] allSuites = {"spades", "hearts", "diamonds", "clubs"};
+        String[] allCards = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
+        // Loops through both arrays and creates a new array
+        // with a unique combination.
+        for (String card : allCards) {
+            for (String suite : allSuites) {
+                // Reinitializing each time so it is a new object.
+                String[] newCard = new String[2];
+                newCard[0] = card;
+                newCard[1] = suite;
+                newDeck.add(newCard);
+            }
+        }
+        // Shuffles ArrayList 5 times to be thorough.
+        for (int x = 0; x < 5; x++) {
+            Collections.shuffle(newDeck);
+        }
+        // Returns ArrayList.
+        return newDeck;
     }
 }
 
