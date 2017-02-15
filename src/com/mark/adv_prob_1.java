@@ -16,16 +16,22 @@ public class adv_prob_1 {
     public static void main(String[] args) {
         ArrayList<String[]> cardDeck = makeDeck();
         String input = "";
-        do {
-            int randomIndex = random.nextInt(cardDeck.size());
-            String[] randomCard = cardDeck.get(randomIndex);
-            System.out.print("Random card: ");
-            System.out.println(randomCard[0] + " of " + randomCard[1]);
-            System.out.println("Press 'Y' to draw another random card.");
-            input = stringScanner.nextLine();
-        }
+            do {
+                if (cardDeck.size() > 0) {
+                    int randomIndex = random.nextInt(cardDeck.size());
+                    String[] randomCard = cardDeck.get(randomIndex);
+                    System.out.print("Random card: ");
+                    System.out.println(randomCard[0] + " of " + randomCard[1]);
+                    cardDeck.remove(randomIndex);
+                    System.out.println("Press 'Y' to draw another random card.");
+                    input = stringScanner.nextLine();
+                }
+                else {
+                    System.out.println("No more cards in deck.");
+                    input = "Get outta here!";
+                }
+            }
             while (input.equalsIgnoreCase("Y"));
-        }
     }
 
 
