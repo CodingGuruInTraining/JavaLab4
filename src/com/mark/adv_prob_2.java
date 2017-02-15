@@ -2,17 +2,8 @@ package com.mark;
 
 import java.util.*;
 
-
-// BRAINSTORMING!!!
-//  single card = String[] >>>
-//  players hand = ArrayList<String[]> >>>
-//  players = dictionary {#:ArrayList}
-//
-
-
-
 /**
- * Created by hl4350hb on 2/15/2017.
+ * This program is a imitation of the classic Go Fish game.
  */
 public class adv_prob_2 {
         // Creates a Random object to randomly pick numbers
@@ -24,40 +15,13 @@ public class adv_prob_2 {
         // Creates variable holding number of cards each player will receive
         int cards_per_Player = 5;
         int player_Count = 2;
-        // Creates string array to hold the player's cards
-//        String[] players_hand = new String[cards_per_Player];
 
         HashMap all_players_cards = new HashMap();
 
         ArrayList<String[]> cardDeck = makeDeck();
 
-//        ArrayList<String[]> player_hand = new ArrayList<String[]>();
         for (int x = 1; x <= player_Count; x++) {
             ArrayList<String[]> player_hand = dealCardsToHand(cards_per_Player, cardDeck);
-            //            for (int i = 0; i < cards_per_Player; i++) {
-//                String[] aCard = drawCard(cardDeck);
-//                player_hand.add(aCard);
-
-
-
-//            // To make it simple, the suite is determined by the range
-//            // the number picked is in. Also, the face cards are
-//            // represented as a number for now.
-//            int card = random.nextInt(52);
-//            if (card <= 12) {
-//                players_cards[i] = String.format("%d of Spades", card + 1);
-//            }
-//            // Number subtracts a multiple of 13 (number of cards per suite) and
-//            // adds one to offset the base-0.
-//            else if (card >= 13 && card <= 25) {
-//                players_cards[i] = String.format("%d of Diamonds", (card - 13) + 1);
-//            }
-//            else if (card >= 26 && card <= 38) {
-//                players_cards[i] = String.format("%d of Clubs", (card - 26) + 1);
-//            }
-//            else if (card >= 39) {
-//                players_cards[i] = String.format("%d of Hearts", (card - 39) + 1);
-
             all_players_cards.put(x, player_hand);
         }
     }
@@ -121,3 +85,6 @@ public class adv_prob_2 {
     }
 }
 
+//  single card = String[] >>>
+//  players hand = ArrayList<String[]> >>>
+//  players = dictionary {#:ArrayList}
