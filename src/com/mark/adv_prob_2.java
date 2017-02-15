@@ -1,6 +1,11 @@
 package com.mark;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Random;
+import java.util.Scanner;
+import java.util.Collections;
+
 
 /**
  * Created by hl4350hb on 2/15/2017.
@@ -71,6 +76,17 @@ public class adv_prob_2 {
         }
         // Returns ArrayList.
         return newDeck;
+    }
+
+    public static String[] drawCard(ArrayList<String[]> cardDeck) {
+        // Picks a random number that will be the index number.
+        int randomIndex = random.nextInt(cardDeck.size());
+        // Pulls the random item from ArrayList.
+        String[] aCard = cardDeck.get(randomIndex);
+        // Removes item from ArrayList so can't be drawn again.
+        cardDeck.remove(randomIndex);
+        // Returns card array.
+        return aCard;
     }
 }
 
