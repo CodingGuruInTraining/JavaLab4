@@ -7,7 +7,7 @@ public class Main {
     static Scanner numberScanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-	// write your code here
+
 
         ArrayList<String> myClasses = new ArrayList<String>();
         myClasses.add("Java");
