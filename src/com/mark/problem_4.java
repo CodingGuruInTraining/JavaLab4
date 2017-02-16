@@ -27,34 +27,15 @@ public class problem_4 {
         }
 
         System.out.println("Your fastest times have been updated:");
-        System.out.println("LAKE\t\tTIME");
+        System.out.println("LAKE\tTIME");
+// ##########   Need to calculate max ###########
         for (String key : lakeTimesHash.keySet()) {
-            System.out.println(lakeTimesHash.get(key) + ":  " + key);
+            System.out.println(key + ":  " + lakeTimesHash.get(key));
         }
 
+    }
 
-
-//        for (String key : lakesAndTimes.keySet()) {
-//            if (lake.equalsIgnoreCase(key)) {
-//
-//            }
-//        }
-
-//        ArrayList newRun = new ArrayList();
-//        newRun.add(lake);
-//        newRun.add(time);
-//        lakeTimes.add(newRun);
-//        for (int x = 0; x < lakeTimes.size(); x++) {
-//            ArrayList item = lakeTimes.get(x);
-//            if (item.get(0).equals(lake)) {
-//                System.out.println("Success!");
-//            }
-//        }
-
-
+    public static Double findMax(ArrayList<Double> aList) {
+        return Collections.max(aList);
     }
 }
-// arraylist containing arrays[lake name, time]
-// NO!
-// dictionary containing ONE arraylist of times; key is lake
-// Arrays.sort(array)
