@@ -26,6 +26,14 @@ public class problem_4 {
             lakeTimesHash.put(lake, lakeTimesArray);
         }
 
+        System.out.println("Your fastest times have been updated:");
+        System.out.println("LAKE\t\tTIME");
+        for (String key : lakeTimesHash.keySet()) {
+            System.out.println(lakeTimesHash.get(key) + ":  " + key);
+        }
+
+
+
 //        for (String key : lakesAndTimes.keySet()) {
 //            if (lake.equalsIgnoreCase(key)) {
 //
