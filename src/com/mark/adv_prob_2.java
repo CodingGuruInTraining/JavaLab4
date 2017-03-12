@@ -23,19 +23,20 @@ public class adv_prob_2 {
         for (int x = 1; x <= player_Count; x++) {
             ArrayList<String[]> player_hand = dealCardsToHand(cards_per_Player, cardDeck);
             all_players_cards.put(x, player_hand);
-        }
-    }
 
 
 
+            String player_hand_string = makeHandString(player_hand);
+            System.out.println(player_hand_string);
 //        // Displays all cards in the player's hand.
-//        System.out.println(Arrays.toString(players_cards));
+//        System.out.println(Arrays.toString(player_hand));
 //        // Prompts user for card number they are looking for
 //        System.out.println("What cards are you looking for? (1-13)");
 //        int wanted_cards = numberScanner.nextInt();
 //        // Displays generic response.
 //        System.out.println("I don't have any of those. GO FISH!");
-
+        }
+    }
 
     // Function for creating deck of cards. Copied over from
     // adv_prob_1.
@@ -82,6 +83,15 @@ public class adv_prob_2 {
             player_hand.add(aCard);
         }
         return player_hand;
+    }
+
+    public static String makeHandString(ArrayList<String[]> player_hand) {
+        String hand = "";
+        for (String[] card : player_hand) {
+            hand += card[0] + " " + card[1] + ", ";
+        }
+        hand = hand.substring(0, hand.length() - 2);
+        return hand;
     }
 }
 
